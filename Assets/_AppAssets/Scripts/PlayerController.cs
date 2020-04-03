@@ -2,15 +2,20 @@
 
 public class PlayerController : MonoBehaviour
 {
+    #region Movement
     [Header("Movement")]
     [SerializeField] private float speed;
     private bool facingRight = true;
+    #endregion
 
+    #region DashMovement
     [Header("DashMovement")]
     [SerializeField] private float dashSpeed;
     [SerializeField] private float startDashTime;
     private float dashTime;
+    #endregion
 
+    #region Jump
     [Header("Jump")]
     [SerializeField] private float jumpPower;
     [SerializeField] private Transform groundCheck;
@@ -22,16 +27,21 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
     private int extraJumps;
     private float jumpTimeCounter;
+    #endregion
 
+    #region Shooting
     [Header("Shooting")]
     [SerializeField] Transform kunaiShootingPoint;
     [SerializeField] GameObject kunaiPrefab;
     private float fireRate = 0.5f;
     private float nextFire = 0f;
+    #endregion
 
+    #region Others
     [HideInInspector] public Vector2 LastPos;
     private Rigidbody2D myRB;
     private Animator myAnim;
+    #endregion
 
     private void Start()
     {
