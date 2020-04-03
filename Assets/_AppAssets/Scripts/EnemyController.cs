@@ -54,6 +54,7 @@ public class EnemyController : MonoBehaviour
         if (collision.tag.Equals("Player"))
         {
             SpriteRenderer.color = oldColor;
+            moving = true;
         }
     }
 }
