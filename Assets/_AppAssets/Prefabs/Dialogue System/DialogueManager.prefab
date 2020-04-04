@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2367401048490168660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2367401048490168650}
+  - component: {fileID: 2367401048490168661}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2367401048490168650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2367401048490168660}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 324.68732, y: 289.16962, z: -0.125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2367401048490168661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2367401048490168660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b4d16f7a3a8854085579e44272db71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testDialogueNumber: 5
+  nameText: {fileID: 0}
+  dialogueText: {fileID: 0}
+  SkipButton: {fileID: 0}
+  dialogues:
+  - name: DEVELOPER
+    sentences:
+    - OH Hi ...
+    - You are the first one to try my game .
+    - I am still new to game dev and this is my first game
+    - The game is not yet finished but I hope you will have fun playing it :D
+    - I didn't make a tutorial yet but ....
+    - you will find some instructions that will help you during your playthrough
+  - name: DEVELOPER
+    sentences:
+    - Hmmmmm ....
+    - Looks like you can't move for some reason
+    - Oh ! My bad sorry ;)
+    - 'I forgot that I didn''t add the player script to the model yet '
+    - Here you go ! Drag this script to the player
+  - name: DEVELOPER
+    sentences:
+    - OH SH*T !!!!
+    - I am really sorry
+    - I had to change the jump button because it was causing some bugs in the code
+    - you can now jump with the up arrow instead of space
+  - name: DEVELOPER
+    sentences:
+    - OMG !!!
+    - I am terribly sorry again
+    - I forgot to put a collider on this part of the environment
+    - It's now fixed
+  - name: DEVELOPER
+    sentences:
+    - Hmmmm ... , that's weird !!!
+    - 'Oh , My bad '
+    - I accidently put the grenade script on the gun instead of the gun script
+    - Here you go , This is the gun script
+  - name: DEVELOPER
+    sentences:
+    - Wait .. why didn't the gun affect that enemy ?!!
+    - It does have a collider
+    - and it can kill you
+    - hmmmmmm ...
+    - Oh , I forgot to add the health bar script to that enemy ??!!
+    - That explains why it didn't take damage
+    - Here you go , this is the health bar script
+  delayBetweenSentences: 3
+  timeBetweenCharacters: 0.05
+  sentences: []
+  anim: {fileID: 0}
