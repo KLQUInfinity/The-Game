@@ -29,7 +29,7 @@ public class DialogueManager : MonoBehaviour
 
     private int currentDialogueIndex;
 
-    public bool inDialogue; 
+    public bool inDialogue;
 
     public Animator anim;
 
@@ -71,7 +71,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (isReadyToSkip)
             {
-                if (Input.GetKeyDown(KeyCode.Return))
+                if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
                 {
                     alreadyPressed = true;
                     DisplayNextSentence();
@@ -118,6 +118,10 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                break;
+            }
             yield return new WaitForSeconds(timeBetweenCharacters);
         }
 
@@ -128,7 +132,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSound(float delay)
     {
-        while(!isReadyToSkip)
+        while (!isReadyToSkip)
         {
             GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
             yield return new WaitForSeconds(delay);
@@ -164,7 +168,7 @@ public class Dialogue
     public string[] sentences;
 }
 
-public class IntEvent : UnityEvent<int> 
+public class IntEvent : UnityEvent<int>
 {
 
 }
