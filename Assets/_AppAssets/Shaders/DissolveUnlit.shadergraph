@@ -4,7 +4,7 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.TextureShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Name\": \"Main Texture\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"45060597-8683-4cd6-8151-76deb8a95d0c\"\n    },\n    \"m_DefaultReferenceName\": \"Texture2D_158A041A\",\n    \"m_OverrideReferenceName\": \"_MainTexture\",\n    \"m_Precision\": 0,\n    \"m_Value\": {\n        \"m_SerializedTexture\": \"{\\\"texture\\\":{\\\"instanceID\\\":0}}\",\n        \"m_Guid\": \"\"\n    },\n    \"m_Modifiable\": true,\n    \"m_DefaultType\": 0\n}"
+            "JSONnodeData": "{\n    \"m_Name\": \"Main Texture\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"45060597-8683-4cd6-8151-76deb8a95d0c\"\n    },\n    \"m_DefaultReferenceName\": \"Texture2D_158A041A\",\n    \"m_OverrideReferenceName\": \"_MainTex\",\n    \"m_Precision\": 0,\n    \"m_Value\": {\n        \"m_SerializedTexture\": \"{\\\"texture\\\":{\\\"instanceID\\\":0}}\",\n        \"m_Guid\": \"\"\n    },\n    \"m_Modifiable\": true,\n    \"m_DefaultType\": 0\n}"
         },
         {
             "typeInfo": {

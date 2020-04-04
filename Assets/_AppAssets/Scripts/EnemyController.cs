@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    [SerializeField] private EnemyType type;
     [SerializeField] private Vector3[] points;
     [SerializeField] private float moveSpeed;
     [SerializeField] private Color alertColor;
@@ -47,6 +48,18 @@ public class EnemyController : MonoBehaviour
             SpriteRenderer.color = alertColor;
             moving = false;
         }
+        else if (collision.tag.Equals("Bullet"))
+        {
+            if (type == EnemyType.Type1)
+            {
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
+            else
+            {
+
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -57,4 +70,10 @@ public class EnemyController : MonoBehaviour
             moving = true;
         }
     }
+}
+
+public enum EnemyType
+{
+    Type1,
+    Type2
 }

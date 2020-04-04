@@ -25,7 +25,7 @@ public class ChestController : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
 
         GetComponent<SpriteRenderer>().sprite = openedChest;
-        GetComponent<SpriteRenderer>().material.SetTexture("_MainTextrue", openedChest.texture);
+        GetComponent<SpriteRenderer>().material.SetTexture("_MainTex", openedChest.texture);
 
         if (chestTresure)
         {
