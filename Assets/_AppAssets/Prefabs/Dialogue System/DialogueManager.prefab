@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b4d16f7a3a8854085579e44272db71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testDialogueNumber: 5
   nameText: {fileID: 0}
   dialogueText: {fileID: 0}
   SkipButton: {fileID: 0}
@@ -51,7 +52,44 @@ MonoBehaviour:
     sentences:
     - OH Hi ...
     - You are the first one to try my game .
-    - I am still new to game dev and this is my first game :D
+    - I am still new to game dev and this is my first game
+    - The game is not yet finished but I hope you will have fun playing it :D
+    - I didn't make a tutorial yet but ....
+    - you will find some instructions that will help you during your playthrough
+  - name: DEVELOPER
+    sentences:
+    - Hmmmmm ....
+    - Looks like you can't move for some reason
+    - Oh ! My bad sorry ;)
+    - 'I forgot that I didn''t add the player script to the model yet '
+    - Here you go ! Drag this script to the player
+  - name: DEVELOPER
+    sentences:
+    - OH SH*T !!!!
+    - I am really sorry
+    - I had to change the jump button because it was causing some bugs in the code
+    - you can now jump with the up arrow instead of space
+  - name: DEVELOPER
+    sentences:
+    - OMG !!!
+    - I am terribly sorry again
+    - I forgot to put a collider on this part of the environment
+    - It's now fixed
+  - name: DEVELOPER
+    sentences:
+    - Hmmmm ... , that's weird !!!
+    - 'Oh , My bad '
+    - I accidently put the grenade script on the gun instead of the gun script
+    - Here you go , This is the gun script
+  - name: DEVELOPER
+    sentences:
+    - Wait .. why didn't the gun affect that enemy ?!!
+    - It does have a collider
+    - and it can kill you
+    - hmmmmmm ...
+    - Oh , I forgot to add the health bar script to that enemy ??!!
+    - That explains why it didn't take damage
+    - Here you go , this is the health bar script
   delayBetweenSentences: 3
   timeBetweenCharacters: 0.05
   sentences: []

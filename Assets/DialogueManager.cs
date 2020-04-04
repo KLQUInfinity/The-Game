@@ -5,6 +5,8 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    public int testDialogueNumber;
+
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public GameObject SkipButton;
@@ -21,7 +23,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        StartDialogue(0);
+        StartDialogue(testDialogueNumber);
     }
 
     private void Update()
