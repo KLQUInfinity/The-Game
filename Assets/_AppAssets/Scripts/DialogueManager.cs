@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject SkipButton;
     public Dialogue[] dialogues;
     public float delayBetweenSentences;
+    public float soundDelay;
     private float currentDelay = 0;
     public float timeBetweenCharacters;
     [HideInInspector] public List<string> sentences;
@@ -89,6 +90,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Insert(0, sentence);
         }
 
+        StartCoroutine(TypeSound(soundDelay));
         DisplayNextSentence();
     }
 
@@ -103,6 +105,7 @@ public class DialogueManager : MonoBehaviour
         }
         string sentence = sentences[sentences.Count - 1];
         StopAllCoroutines();
+        StartCoroutine(TypeSound(soundDelay));
         StartCoroutine(TypeSentence(sentence));
         sentences.RemoveAt(sentences.Count - 1);
     }
@@ -119,6 +122,15 @@ public class DialogueManager : MonoBehaviour
         isReadyToSkip = true;
         currentDelay = delayBetweenSentences;
         //Invoke("DisplayNextSentence", delayBetweenSentences);
+    }
+
+    IEnumerator TypeSound(float delay)
+    {
+        while(!isReadyToSkip)
+        {
+            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+            yield return new WaitForSeconds(delay);
+        }
     }
 
     void EndDialogue()
