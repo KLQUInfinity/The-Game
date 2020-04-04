@@ -33,7 +33,6 @@ public class DragableItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("hey " + other.name);
         if(other.tag == "Player")
         {
             GameMaster.instance.levels[0].GetComponent<Level1>().EnablePlayerMovement();
