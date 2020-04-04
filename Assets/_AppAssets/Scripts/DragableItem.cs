@@ -6,6 +6,8 @@ public class DragableItem : MonoBehaviour
 {
     private float distance;
 
+    public string target;
+
     private void Start()
     {
         distance = Camera.main.transform.position.z;
@@ -14,6 +16,7 @@ public class DragableItem : MonoBehaviour
     private void OnMouseDrag()
     {
         transform.position = GetMousePos();
+        GetComponent<Collider2D>().isTrigger = true;
     }
 
     private void OnMouseUp()
@@ -26,5 +29,15 @@ public class DragableItem : MonoBehaviour
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
         return mousePos;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        print("hey " + other.name);
+        if(other.tag == "Player")
+        {
+            GameMaster.instance.levels[0].GetComponent<Level1>().EnablePlayerMovement();
+            Destroy(gameObject);
+        }
     }
 }

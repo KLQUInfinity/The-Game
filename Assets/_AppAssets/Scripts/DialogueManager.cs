@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
+    public IntEvent DialogueFinished = new IntEvent();
+
+    public static DialogueManager instance;
+
     public int testDialogueNumber;
 
     public TextMeshProUGUI nameText;
@@ -19,11 +24,21 @@ public class DialogueManager : MonoBehaviour
     private bool isReadyToSkip = false;
     private bool alreadyPressed = false;
 
+    private int currentDialogueIndex;
+
+    public bool inDialogue; 
+
     public Animator anim;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
-        StartDialogue(testDialogueNumber);
+        inDialogue = false;
+        //StartDialogue(testDialogueNumber);
     }
 
     private void Update()
@@ -65,6 +80,8 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(int index)
     {
         anim.SetBool("IsOpen", true);
+        inDialogue = true;
+        currentDialogueIndex = index;
         nameText.text = dialogues[index].name;
 
         foreach (string sentence in dialogues[index].sentences)
@@ -107,6 +124,8 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         anim.SetBool("IsOpen", false);
+        inDialogue = false;
+        DialogueFinished.Invoke(currentDialogueIndex);
         //MyGameManager.justEndedConversation = true;
         //MyGameManager.inConversation = false;
     }
@@ -129,3 +148,9 @@ public class Dialogue
     [TextArea(3, 10)]
     public string[] sentences;
 }
+
+public class IntEvent : UnityEvent<int> 
+{
+
+}
+

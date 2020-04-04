@@ -48,15 +48,15 @@ public class PlayerController : MonoBehaviour
         LastPos = transform.position;
         extraJumps = extraJumpsValue;
         myRB = GetComponent<Rigidbody2D>();
-        myAnim = GetComponentInChildren<Animator>();
+        //myAnim = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
-        if (Input.GetAxis("Fire1") > 0)
-        {
-            ShootKunai();
-        }
+        //if (Input.GetAxis("Fire1") > 0)
+        //{
+        //    ShootKunai();
+        //}
     }
 
     private void FixedUpdate()
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
     {
         float move = Input.GetAxisRaw("Horizontal");
 
-        myAnim.SetFloat("speed", Mathf.Abs(move));
+        //myAnim.SetFloat("speed", Mathf.Abs(move));
 
         myRB.velocity = new Vector2(move * speed * Time.deltaTime, myRB.velocity.y);
 
@@ -145,8 +145,8 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
         }
 
-        myAnim.SetBool("isGrounded", isGrounded);
-        myAnim.SetFloat("verticalSpeed", myRB.velocity.y);
+        //myAnim.SetBool("isGrounded", isGrounded);
+        //myAnim.SetFloat("verticalSpeed", myRB.velocity.y);
     }
 
     private void Flip()
