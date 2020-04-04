@@ -6,13 +6,9 @@ public class CameraFollwer : MonoBehaviour
 {
     [SerializeField] private Transform player;
 
-    public float lerpSpeed;
-
     private Vector3 offset;
 
     private bool followPlayer;
-
-    private Vector3 vel;
 
     private void Start()
     {

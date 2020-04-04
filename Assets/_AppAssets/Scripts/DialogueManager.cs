@@ -10,7 +10,9 @@ public class DialogueManager : MonoBehaviour
 
     public static DialogueManager instance;
 
-    public int testDialogueNumber;
+    public int NextDialogueIndex = 0;
+
+    //public int testDialogueNumber;
 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
@@ -138,6 +140,7 @@ public class DialogueManager : MonoBehaviour
         anim.SetBool("IsOpen", false);
         inDialogue = false;
         DialogueFinished.Invoke(currentDialogueIndex);
+        NextDialogueIndex++;
         //MyGameManager.justEndedConversation = true;
         //MyGameManager.inConversation = false;
     }

@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
+    public UnityEvent playerDied = new UnityEvent();
+
     #region Movement
     [Header("Movement")]
     [SerializeField] private float speed;
@@ -23,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.02f;
     [SerializeField] private int extraJumpsValue;
     [SerializeField] private float jumpTime;
+    public KeyCode jumpButton;
     private bool isGrounded;
     private bool isJumping;
     private int extraJumps;
@@ -48,6 +52,7 @@ public class PlayerController : MonoBehaviour
         LastPos = transform.position;
         extraJumps = extraJumpsValue;
         myRB = GetComponent<Rigidbody2D>();
+        jumpButton = KeyCode.Space;
         //myAnim = GetComponentInChildren<Animator>();
     }
 
@@ -61,12 +66,15 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
-        Jump();
-
-        if (myRB.velocity.y < 0)
+        if (!DialogueManager.instance.inDialogue)
         {
-            myRB.gravityScale = 4f;
+            Move();
+            Jump();
+
+            if (myRB.velocity.y < 0)
+            {
+                myRB.gravityScale = 4f;
+            }
         }
     }
 
@@ -122,13 +130,13 @@ public class PlayerController : MonoBehaviour
             jumpTimeCounter = jumpTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
+        if (Input.GetKeyDown(jumpButton) && extraJumps > 0)
         {
             isGrounded = false;
             myRB.velocity = new Vector2(myRB.velocity.x, jumpPower);
             extraJumps--;
         }
-        if (Input.GetKey(KeyCode.Space) && isJumping)
+        if (Input.GetKey(jumpButton) && isJumping)
         {
             if (jumpTimeCounter > 0)
             {
@@ -140,7 +148,7 @@ public class PlayerController : MonoBehaviour
                 isJumping = false;
             }
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(jumpButton))
         {
             isJumping = false;
         }
@@ -175,6 +183,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        playerDied.Invoke();
         transform.position = LastPos;
     }
 }

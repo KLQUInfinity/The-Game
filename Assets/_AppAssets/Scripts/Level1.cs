@@ -8,6 +8,7 @@ public class Level1 : MonoBehaviour
     public GameObject movementInstruction;
     public GameObject scriptPrefab;
     public Transform scriptSpawnLocation;
+    public GameObject chest;
 
     private void OnEnable()
     {
@@ -34,8 +35,8 @@ public class Level1 : MonoBehaviour
                 StartCoroutine(StartDialogue1AfterDelay(3));
                 break;
             case 1:
-                GameObject go = Instantiate(scriptPrefab, scriptSpawnLocation.position, scriptSpawnLocation.rotation);
-                //player.GetComponent<PlayerController>().enabled = true;
+                chest.GetComponent<ChestController>().ToggleChest(true);
+                GameMaster.instance.StartLevel(1);
                 break;
         }
     }
