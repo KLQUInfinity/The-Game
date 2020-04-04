@@ -21,7 +21,7 @@ public class DragableItem : MonoBehaviour
 
     private void OnMouseUp()
     {
-
+        GetComponent<Collider2D>().isTrigger = false;
     }
 
     private Vector2 GetMousePos()

@@ -16,7 +16,7 @@ public class CameraFollwer : MonoBehaviour
 
     private void Start()
     {
-        Invoke("SetOffset", 3);
+        SetOffset();
     }
 
     private void SetOffset()
