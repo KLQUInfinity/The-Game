@@ -35,6 +35,7 @@ public class Level2 : MonoBehaviour
                 nextCliff.GetComponent<Collider2D>().offset = new Vector2(0, 0);
                 nextCliff.GetComponent<BoxCollider2D>().size = new Vector2(1, 1);
                 nextCliff.GetComponent<FalseCliff>().enabled = false;
+                GameMaster.instance.StartLevel(2);
                 break;
         }
     }

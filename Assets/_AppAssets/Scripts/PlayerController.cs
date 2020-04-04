@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     #region Shooting
     [Header("Shooting")]
+    public bool canShoot = false;
     [SerializeField] Transform kunaiShootingPoint;
     [SerializeField] GameObject kunaiPrefab;
     private float fireRate = 0.5f;
@@ -58,10 +59,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetAxis("Fire1") > 0)
-        //{
-        //    ShootKunai();
-        //}
+        if (Input.GetAxis("Fire1") > 0)
+        {
+            ShootKunai();
+        }
     }
 
     private void FixedUpdate()
@@ -167,7 +168,15 @@ public class PlayerController : MonoBehaviour
 
     private void ShootKunai()
     {
-        if (Time.time > nextFire)
+        if (GameMaster.instance.levels[2].GetComponent<Level3>().waitingForDeath)
+        {
+            myRB.AddForce(new Vector2(-100, 10), ForceMode2D.Impulse);
+            CameraFollwer.instance.followPlayer = false;
+            Invoke("Die", 0.7f);
+            return;
+        }
+
+        if (Time.time > nextFire && canShoot)
         {
             nextFire = Time.time + fireRate;
             if (facingRight)
@@ -184,6 +193,8 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         playerDied.Invoke();
+        myRB.velocity = Vector2.zero;
         transform.position = LastPos;
+        CameraFollwer.instance.followPlayer = true;
     }
 }

@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class CameraFollwer : MonoBehaviour
 {
+    public static CameraFollwer instance;
+
     [SerializeField] private Transform player;
 
     private Vector3 offset;
 
-    private bool followPlayer;
+    public bool followPlayer;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {

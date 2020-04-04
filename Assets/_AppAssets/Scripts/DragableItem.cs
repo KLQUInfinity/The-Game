@@ -38,5 +38,10 @@ public class DragableItem : MonoBehaviour
             GameMaster.instance.levels[0].GetComponent<Level1>().EnablePlayerMovement();
             Destroy(gameObject);
         }
+
+        if(other.tag == "Gun")
+        {
+            GameMaster.instance.levels[2].GetComponent<Level3>().player.GetComponent<PlayerController>().canShoot = true;
+        }
     }
 }
