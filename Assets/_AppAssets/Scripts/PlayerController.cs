@@ -190,6 +190,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag.Equals("FakeWater"))
+        {
+            DialogueManager.instance.StartDialogue(5);
+        }
+    }
+
     public void Die()
     {
         playerDied.Invoke();

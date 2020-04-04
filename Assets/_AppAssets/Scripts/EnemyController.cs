@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private EnemyType type;
+    public EnemyType type;
     [SerializeField] private Vector3[] points;
     [SerializeField] private float moveSpeed;
     [SerializeField] private Color alertColor;

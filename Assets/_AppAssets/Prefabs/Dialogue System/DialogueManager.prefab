@@ -84,6 +84,12 @@ MonoBehaviour:
     - Here you go , This is the gun script
   - name: DEVELOPER
     sentences:
+    - Oh !!!
+    - you didn't die ?!
+    - I accidently removed water die script
+    - so you can walk on this water
+  - name: DEVELOPER
+    sentences:
     - Wait .. why didn't the gun affect that enemy ?!!
     - It does have a collider
     - and it can kill you

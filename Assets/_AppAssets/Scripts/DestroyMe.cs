@@ -12,10 +12,17 @@ public class DestroyMe : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            if (collision.gameObject.GetComponent<EnemyController>().type == EnemyType.Type1)
+            {
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
+            else
+            {
+                DialogueManager.instance.StartDialogue(6);
+            }
         }
     }
 }
