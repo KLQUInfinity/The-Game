@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_AppAssets/_Scenes/GameplayScene-Gehad.unity
+    guid: 8da3c42201e53654b844e4e1a5654cb3
   m_configObjects: {}
