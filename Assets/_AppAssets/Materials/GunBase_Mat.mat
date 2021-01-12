@@ -48,7 +48,7 @@ Material:
     - Vector1_992677F9: 30
     - Vector1_F56DAD9: 0.01
     - _DissolveAmount: 0
-    - _DissolveScale: 0.07
+    - _DissolveScale: 0.01
     m_Colors:
     - Color_69B46CA7: {r: 0, g: 3.513726, b: 16, a: 0}
     - _DissolveColor: {r: 0, g: 0.5019608, b: 1.5058824, a: 1}

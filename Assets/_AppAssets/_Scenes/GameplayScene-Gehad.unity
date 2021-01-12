@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2197,8 +2197,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 136.76, y: 4.03}
-  m_SizeDelta: {x: 19.021, y: 5.926}
+  m_AnchoredPosition: {x: 137, y: 1.17}
+  m_SizeDelta: {x: 10, y: 2.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &954198824
 MonoBehaviour:
@@ -2247,14 +2247,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 17.85
+  m_fontSize: 8.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 1
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 257
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -2858,8 +2858,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 174.4, y: 3.772}
-  m_SizeDelta: {x: 26.414, y: 12.014}
+  m_AnchoredPosition: {x: 166.43901, y: 0.7089999}
+  m_SizeDelta: {x: 7.836, y: 11.618}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1260459151
 MonoBehaviour:
@@ -2910,14 +2910,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 36
+  m_fontSize: 8.15
+  m_fontSizeBase: 19.59
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 1
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 257
+  m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -2956,7 +2956,7 @@ MonoBehaviour:
     spaceCount: 9
     wordCount: 9
     linkCount: 0
-    lineCount: 5
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
